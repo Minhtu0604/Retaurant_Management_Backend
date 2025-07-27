@@ -8,11 +8,11 @@ import (
 
 type Menu struct {
 	ID         primitive.ObjectID `bson:"_id" `
-	Name       *string            `json:"name" validate:"required,min=2,max=100"`
-	Price      *float64           `json:"price" validate:"required"`
-	Food_image *string            `json:"food_image" validate:"required"`
+	Name       string             `json:"name" validate:"required,min=2,max=100"`
+	Category   string             `json: "category" validate:"required"`
+	Start_Date *time.Time         `json:"start_date"`
+	End_Date   *time.Time         `json:"end_date"`
 	Created_at time.Time          `json:"created_at"`
 	Update_at  time.Time          `json:"update_at"`
-	Food_id    string             `json:"food_id"`
-	Menu_id    *string            `json:"menu_id" validate:"required"`
+	Menu_id    string             `json:"menu_id" validate:"required"`
 }
