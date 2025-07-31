@@ -143,3 +143,7 @@ func UpdateMenu() gin.HandlerFunc {
 		}
 	}
 }
+
+func inTimeSpan(start, end, check time.Time) bool {
+	return check.After(time.Now()) && end.Before(start)
+}
